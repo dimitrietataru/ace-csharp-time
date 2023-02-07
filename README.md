@@ -1,5 +1,9 @@
 # C# time
 
+[![build](https://github.com/dimitrietataru/ace-csharp-time/actions/workflows/build.yml/badge.svg)](https://github.com/dimitrietataru/ace-csharp-time/actions/workflows/build.yml)
+[![release](https://github.com/dimitrietataru/ace-csharp-time/actions/workflows/release.yml/badge.svg)](https://github.com/dimitrietataru/ace-csharp-time/actions/workflows/release.yml)
+[![NuGet](https://img.shields.io/nuget/v/AceCSharp.Time)](https://www.nuget.org/packages/AceCSharp.Time)
+
 ### What is AceCSharp.Time
 It's a library, that exposes DI-ready and mockable implementation of current date and time, or date and time with offset.
 
