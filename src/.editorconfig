@@ -110,6 +110,7 @@ csharp_using_directive_placement = outside_namespace:error
 
 # Code Style | General | Modifier preferences
 dotnet_style_readonly_field = true:warning
+csharp_style_prefer_readonly_struct = true:suggestion
 csharp_prefer_static_local_function = true:warning
 
 # Code Style | General | Parameter preferences
@@ -121,6 +122,8 @@ csharp_style_allow_embedded_statements_on_same_line_experimental = false:warning
 csharp_style_allow_blank_lines_between_consecutive_braces_experimental = false:warning
 dotnet_style_allow_statement_immediately_after_block_experimental = false:warning
 csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = false:warning
+csharp_style_allow_blank_line_after_token_in_conditional_expression_experimental = false:warning
+csharp_style_allow_blank_line_after_token_in_arrow_expression_clause_experimental = true:suggestion
 
 # Code Style | Formatting | General
 
@@ -468,24 +471,6 @@ dotnet_naming_style.ends_with_async.required_suffix = Async
 dotnet_naming_style.ends_with_async.word_separator = 
 dotnet_naming_style.ends_with_async.capitalization = pascal_case
 
-# Microsoft.CodeStyle | Unnecessary code rules
-dotnet_diagnostic.IDE0001.severity = warning
-dotnet_diagnostic.IDE0002.severity = warning
-dotnet_diagnostic.IDE0004.severity = warning
-dotnet_diagnostic.IDE0005.severity = warning
-dotnet_diagnostic.IDE0035.severity = warning
-dotnet_diagnostic.IDE0051.severity = warning
-dotnet_diagnostic.IDE0052.severity = warning
-dotnet_diagnostic.IDE0058.severity = warning
-dotnet_diagnostic.IDE0059.severity = warning
-dotnet_diagnostic.IDE0060.severity = warning
-dotnet_diagnostic.IDE0079.severity = warning
-dotnet_diagnostic.IDE0080.severity = warning
-dotnet_diagnostic.IDE0081.severity = warning
-dotnet_diagnostic.IDE0100.severity = warning
-dotnet_diagnostic.IDE0110.severity = warning
-dotnet_diagnostic.IDE0140.severity = warning
-
 # Microsoft.CodeAnalysis.NetAnalyzers | Design
 dotnet_diagnostic.CA1000.severity = warning
 dotnet_diagnostic.CA1001.severity = warning
@@ -548,6 +533,7 @@ dotnet_diagnostic.CA1307.severity = warning
 dotnet_diagnostic.CA1308.severity = suggestion
 dotnet_diagnostic.CA1309.severity = warning
 dotnet_diagnostic.CA1310.severity = warning
+dotnet_diagnostic.CA1311.severity = warning
 dotnet_diagnostic.CA2101.severity = suggestion
 
 # Microsoft.CodeAnalysis.NetAnalyzers | Interoperability
@@ -556,6 +542,9 @@ dotnet_diagnostic.CA1416.severity = warning
 dotnet_diagnostic.CA1417.severity = warning
 dotnet_diagnostic.CA1418.severity = warning
 dotnet_diagnostic.CA1419.severity = suggestion
+dotnet_diagnostic.CA1420.severity = warning
+dotnet_diagnostic.CA1421.severity = suggestion
+dotnet_diagnostic.CA1422.severity = warning
 
 # Microsoft.CodeAnalysis.NetAnalyzers | Maintainability
 dotnet_diagnostic.CA1501.severity = warning
@@ -626,6 +615,10 @@ dotnet_diagnostic.CA1848.severity = suggestion
 dotnet_diagnostic.CA1849.severity = warning
 dotnet_diagnostic.CA1850.severity = none
 dotnet_diagnostic.CA1851.severity = warning
+dotnet_diagnostic.CA1852.severity = warning
+dotnet_diagnostic.CA1853.severity = warning
+dotnet_diagnostic.CA1854.severity = suggestion
+dotnet_diagnostic.CA1855.severity = suggestion
 
 # Microsoft.CodeAnalysis.NetAnalyzers | Reliability
 dotnet_diagnostic.CA2000.severity = suggestion
@@ -641,6 +634,8 @@ dotnet_diagnostic.CA2015.severity = warning
 dotnet_diagnostic.CA2016.severity = warning
 dotnet_diagnostic.CA2017.severity = warning
 dotnet_diagnostic.CA2018.severity = warning
+dotnet_diagnostic.CA2019.severity = suggestion
+dotnet_diagnostic.CA2020.severity = suggestion
 
 # Microsoft.CodeAnalysis.NetAnalyzers | Security
 dotnet_diagnostic.CA2100.severity = warning
@@ -780,6 +775,107 @@ dotnet_diagnostic.CA2255.severity = warning
 dotnet_diagnostic.CA2256.severity = warning
 dotnet_diagnostic.CA2257.severity = warning
 dotnet_diagnostic.CA2258.severity = warning
+dotnet_diagnostic.CA2259.severity = warning
+dotnet_diagnostic.CA2260.severity = warning
 
+# Exception | E001
+[**[Dd][Tt][Oo]{s,}**.cs]
+dotnet_diagnostic.CA1002.severity = none
+dotnet_diagnostic.CA1819.severity = none
+dotnet_diagnostic.CA2227.severity = none
+
+# Exception | E002
+[**[Mm]odel{s,}**.cs]
+dotnet_diagnostic.CA1002.severity = none
+dotnet_diagnostic.CA1819.severity = none
+dotnet_diagnostic.CA2227.severity = none
+
+# Exception | E003
+[**[Ee]ntit{y,i}{e,}{s,}**.cs]
+dotnet_diagnostic.CA1002.severity = none
+dotnet_diagnostic.CA1819.severity = none
+dotnet_diagnostic.CA2227.severity = none
+
+# Exception | E101
+[**[Pp]rofile.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+[**[Aa]uto[Mm]apper**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
+# Exception | E011
+[**[Dd][Tt][Oo]{s,}**.cs]
+dotnet_diagnostic.CA1056.severity = none
+
+# Exception | E012
+[**[Mm]odel{s,}**.cs]
+dotnet_diagnostic.CA1056.severity = none
+
+# Exception | E013
+[**[Ee]ntit{y,i}{e,}{s,}**.cs]
+dotnet_diagnostic.CA1056.severity = none
+
+# Exception | E102
 [**[Tt]est{s,}**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
+# Exception | E103
+[**[Cc]onfiguration{s,}**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
+# Exception | E104?
+[**[Cc]lassMap**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
+# Exception | E105?
+[**[Pp]rogram**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
+# Exception | E106?
+[**[Ss]tartup**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
+# Exception | E201
+[**[Pp]rogram.cs]
+dotnet_diagnostic.CA1812.severity = none
+
+# Exception | E301
+[**[Ff]ake{r,}**.cs]
+dotnet_diagnostic.IDE0051.severity = none
+
+# Exception | E501
+[**[Tt]est{s,}**.cs]
+dotnet_naming_rule.method_async_should_be_ends_with_async.severity = none
+
+# Exception | TODO: Add exception code
+[**[Pp]rogram**.cs]
+csharp_style_unused_value_expression_statement_preference = discard_variable:none
+
+# Exception | TODO: Add exception code
+[**[Ss]tartup**.cs]
+csharp_style_unused_value_expression_statement_preference = discard_variable:none
+
+# Overlapping SonarAnalyzer rules | S1144 and IDE0051 | Unused private types or members should be removed
+[*.cs]
+dotnet_diagnostic.S1144.severity = none
+
+# Overlapping SonarAnalyzer rules | S1905 and IDE0004 | Redundant casts should not be used
+[*.cs]
+dotnet_diagnostic.S1905.severity = none
+
+# Missing XML comment for publicly visible type or member
+[*.cs]
+dotnet_diagnostic.CS1591.severity = silent
+[**[Cc]ontroller{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+[**[Mm]odel{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+[**[Ee]ntit{y,i}{e,}{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+[**[Dd][Tt][Oo]{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+[**[Ee]num{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+
+# Remove unnecessary expression value
+[*.cs]
 dotnet_diagnostic.IDE0058.severity = silent
