@@ -25,12 +25,14 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 6.0.x
+        cache: true
+        cache-dependency-path: '**/*.csproj'
 
     - name: dotnet restore
       run: dotnet restore $SOLUTION
